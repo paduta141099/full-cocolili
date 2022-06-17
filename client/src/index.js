@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Prices from "./pages/Prices";
-import About from "./pages/About";
-import Gallery from "./pages/Gallery";
+import NotFound from "./pages/NotFound";
+import Services from "./pages/Services";
+import Collection from "./pages/Collection";
+import Contact from "./pages/Contact";
+import "bootstrap/dist/css/bootstrap.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,9 +14,10 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="prices" element={<Prices />} />
-          <Route path="about" element={<About />} />
+          <Route path="services" element={<Services />} />
+          <Route path="collection" element={<Collection />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
