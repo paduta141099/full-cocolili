@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav
       className={
         isScroll
-          ? "navbar navbar-expand-lg navbar-light bg-dark shadow-md sticky-top"
+          ? "navbar navbar-expand-lg navbar-light text-white bg-dark shadow-sm sticky-top"
           : "navbar navbar-expand-lg navbar-light"
       }
     >
@@ -40,13 +40,18 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <Link className="navbar-brand text-white" to="/">
+          <Link
+            className={isScroll ? "navbar-brand text-white" : "navbar-brand"}
+            to="/"
+          >
             COCOLILI
           </Link>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link
-                className="nav-link active text-white"
+                className={
+                  isScroll ? "nav-link active text-white" : "nav-link active"
+                }
                 aria-current="page"
                 to="/"
               >
@@ -55,7 +60,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link active text-white"
+                className={
+                  isScroll ? "nav-link active text-white" : "nav-link active"
+                }
                 aria-current="page"
                 to="/services"
               >
@@ -64,7 +71,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link active text-white"
+                className={
+                  isScroll ? "nav-link active text-white" : "nav-link active"
+                }
                 aria-current="page"
                 to="/collection"
               >
@@ -73,7 +82,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                className="nav-link active text-white"
+                className={
+                  isScroll ? "nav-link active text-white" : "nav-link active"
+                }
                 aria-current="page"
                 to="/contact"
               >

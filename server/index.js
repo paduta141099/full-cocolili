@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const modelRoute = require("./routes/Model");
 
 dotenv.config();
 //Connect DB
@@ -20,6 +21,9 @@ app.use(morgan("common"));
 app.get("/api", (req, res) => {
   res.status(200).json("hello sadas");
 });
+
+//ROUTES
+app.use("/v1/model", modelRoute);
 
 app.listen(3001, () => {
   console.log("Running on port 3001");

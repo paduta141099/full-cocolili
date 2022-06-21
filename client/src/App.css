@@ -3,15 +3,9 @@
   scroll-behavior: smooth;
 }
 .App {
-  text-align: center;
   font-family: 'Lora', sans-serif;
   font-size: 1rem;
-  background-color:bisque;
+  background-color:linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
