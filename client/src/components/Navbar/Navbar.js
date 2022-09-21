@@ -5,11 +5,7 @@ const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setIsScroll(true);
-    } else {
-      setIsScroll(false);
-    }
+    setIsScroll(window.scrollY >= 75);
   };
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
@@ -27,9 +23,9 @@ const Navbar = () => {
           : "navbar navbar-expand-lg navbar-light"
       }
     >
-      <div className="container">
+      <div className="container mb-2 text-center">
         <button
-          className="navbar-toggler"
+          className={isScroll ? "navbar-toggler text-white" : "navbar-toggler"}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo01"
@@ -37,9 +33,15 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span
+            className={
+              isScroll
+                ? "navbar-toggler-icon text-white"
+                : "navbar-toggler-icon"
+            }
+          ></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div className="collapse navbar-collapse mt-2" id="navbarTogglerDemo01">
           <Link
             className={isScroll ? "navbar-brand text-white" : "navbar-brand"}
             to="/"

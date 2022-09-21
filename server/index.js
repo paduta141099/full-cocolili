@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 const modelRoute = require("./routes/Model");
 
 dotenv.config();
-//Connect DB
+// Connect DB
 mongoose.connect(process.env.MONGODB_URL, () => {
   console.log("Connected to MongoDB");
 });
@@ -16,14 +16,14 @@ mongoose.connect(process.env.MONGODB_URL, () => {
 app.use(bodyParser.json({ limit: "50mb" }));
 
 app.use(cors());
-app.use(morgan("common"));
+// app.use(morgan("common"));
 
 app.get("/api", (req, res) => {
   res.status(200).json("hello sadas");
 });
 
 //ROUTES
-app.use("/v1/model", modelRoute);
+// app.use("/v1/model", modelRoute);
 
 app.listen(3001, () => {
   console.log("Running on port 3001");

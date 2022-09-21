@@ -7,40 +7,36 @@
 //   },
 //   imgURL: {
 //     type: String,
+//     required: true,
 //   },
-//   collection: [
-//     {
-//       type: mongoose.Schema.Types.ObjectId,
-//       ref: "Collection",
-//     },
-//   ],
+//   collection: {
+//     type: String,
+//   },
 // });
 
 // let Model = mongoose.model("Model", modelSchema);
 
-// modelSchema.set("toJSON", {
-//   virtuals: true,
-// });
+// module.exports = { Model };
 
-// module.exports = { Photo, Collection, Model };
+// // const mongoose = require("mongoose");
+// // const photoSchema = new mongoose.Schema({
+// //   imgURL: {
+// //     type: String,
+// //     required: true,
+// //   },
+// //   publishedDate: {
+// //     type: String,
+// //   },
+// //   collection: {
+// //     type: mongoose.Schema.Types.ObjectId,
+// //     ref: "Collection",
+// //   },
+// //   model: {
+// //     type: mongoose.Schema.Types.ObjectId,
+// //     ref: "Model",
+// //   },
+// // });
 
-const mongoose = require("mongoose");
-const photoSchema = new mongoose.Schema({
-  imgURL: {
-    type: String,
-    required: true,
-  },
-  publishedDate: {
-    type: String,
-  },
-  collection: {
-    type: String,
-  },
-  model: {
-    type: String,
-  },
-});
+// // let Photo = mongoose.model("Photo", photoSchema);
 
-let Photo = mongoose.model("Photo", photoSchema);
-
-module.exports = { Photo };
+// // module.exports = { Photo };

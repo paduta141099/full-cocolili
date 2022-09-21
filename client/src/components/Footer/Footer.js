@@ -8,6 +8,14 @@ const Footer = () => {
         <div className="col-md-4">COCOLILI all rights reserved</div>
         <div className="col-md-4"></div>
       </div>
+      <div className="row mt-3">
+        <div className="text-center ">
+          <a href="/facebook">facebook</a> | 
+          <a href="/instagram"> instagram</a> |
+          <a href="/tiktok"> tiktok</a> |
+          <a href="/messenger"> messenger</a>
+        </div>
+      </div>
     </div>
   );
 };
