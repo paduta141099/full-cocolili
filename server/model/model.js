@@ -1,42 +1,38 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// const modelSchema = new mongoose.Schema({
-//   name: {
-//     type: String,
-//     required: true,
-//   },
-//   imgURL: {
-//     type: String,
-//     required: true,
-//   },
-//   collection: {
-//     type: String,
-//   },
-// });
+const authorSchema = new mongoose.Schema({
+  name: {
+    type: String,
+  },
+  year: {
+    type: Number,
+  },
+  books: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
+});
 
-// let Model = mongoose.model("Model", modelSchema);
+const bookSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  publishedDate: {
+    type: String,
+  },
+  genres: {
+    type: [String],
+  },
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Author",
+  },
+});
 
-// module.exports = { Model };
+let Book = mongoose.model("Book", bookSchema);
+let Author = mongoose.model("Author", authorSchema);
 
-// // const mongoose = require("mongoose");
-// // const photoSchema = new mongoose.Schema({
-// //   imgURL: {
-// //     type: String,
-// //     required: true,
-// //   },
-// //   publishedDate: {
-// //     type: String,
-// //   },
-// //   collection: {
-// //     type: mongoose.Schema.Types.ObjectId,
-// //     ref: "Collection",
-// //   },
-// //   model: {
-// //     type: mongoose.Schema.Types.ObjectId,
-// //     ref: "Model",
-// //   },
-// // });
-
-// // let Photo = mongoose.model("Photo", photoSchema);
-
-// // module.exports = { Photo };
+module.exports = { Book, Author };

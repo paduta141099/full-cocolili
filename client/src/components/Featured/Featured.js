@@ -52,7 +52,6 @@ const Featured = () => {
 
 const Wrapper = styled.div`
     width: 100%;
-    
 `
 
 const Content = styled.div`
